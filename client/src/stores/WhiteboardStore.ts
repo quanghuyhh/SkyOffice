@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import phaserGame from '../PhaserGame'
 import Game from '../scenes/Game'
+import { GREETER_URL } from '../utils/greeter'
 
 interface WhiteboardState {
   whiteboardDialogOpen: boolean
@@ -40,7 +41,7 @@ export const whiteboardSlice = createSlice({
     setWhiteboardUrls: (state, action: PayloadAction<{ whiteboardId: string; roomId: string }>) => {
       state.urls.set(
         action.payload.whiteboardId,
-        `https://www.tldraw.com/r/sky-office-${action.payload.roomId}`
+        GREETER_URL
       )
     },
   },

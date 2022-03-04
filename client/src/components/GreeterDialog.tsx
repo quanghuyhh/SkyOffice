@@ -5,6 +5,7 @@ import CloseIcon from '@mui/icons-material/Close'
 
 import { useAppSelector, useAppDispatch } from '../hooks'
 import { closeWhiteboardDialog } from '../stores/WhiteboardStore'
+import { closeGreeterDialog } from '../stores/GreeterStore'
 
 const Backdrop = styled.div`
   position: fixed;
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
   }
 `
 
-const WhiteboardWrapper = styled.div`
+const GreeterWrapper = styled.div`
   flex: 1;
   border-radius: 25px;
   overflow: hidden;
@@ -44,12 +45,8 @@ const WhiteboardWrapper = styled.div`
   }
 `
 
-const WhiteboardIframe = styled.iframe`
-  background: #fff
-`
-
-export default function WhiteboardDialog() {
-  const whiteboardUrl = useAppSelector((state) => state.whiteboard.whiteboardUrl)
+export default function GreeterDialog() {
+  const greeterUrl = useAppSelector((state) => state.greeter.greeterUrl)
   const dispatch = useAppDispatch()
 
   return (
@@ -58,14 +55,14 @@ export default function WhiteboardDialog() {
         <IconButton
           aria-label="close dialog"
           className="close"
-          onClick={() => dispatch(closeWhiteboardDialog())}
+          onClick={() => dispatch(closeGreeterDialog())}
         >
           <CloseIcon />
         </IconButton>
-        {whiteboardUrl && (
-          <WhiteboardWrapper>
-            <WhiteboardIframe title="white board" src={whiteboardUrl} />
-          </WhiteboardWrapper>
+        {greeterUrl && (
+          <GreeterWrapper>
+            <iframe title="white board" src={greeterUrl} />
+          </GreeterWrapper>
         )}
       </Wrapper>
     </Backdrop>

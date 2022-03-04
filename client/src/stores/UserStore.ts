@@ -18,6 +18,9 @@ export const userSlice = createSlice({
     videoConnected: false,
     loggedIn: false,
     playerNameMap: new Map<string, string>(),
+    playerName: '',
+    avatarIndex: 0,
+    activating: false,
   },
   reducers: {
     toggleBackgroundMode: (state) => {
@@ -43,6 +46,15 @@ export const userSlice = createSlice({
     removePlayerNameMap: (state, action: PayloadAction<string>) => {
       state.playerNameMap.delete(sanitizeId(action.payload))
     },
+    setPlayerName: (state, action: PayloadAction<string>) => {
+      state.playerName = action.payload
+    },
+    setAvatarIndex: (state, action: PayloadAction<number>) => {
+      state.avatarIndex = action.payload
+    },
+    setActivating: (state, action: PayloadAction<boolean>) => {
+      state.activating = action.payload
+    },
   },
 })
 
@@ -53,6 +65,9 @@ export const {
   setLoggedIn,
   setPlayerNameMap,
   removePlayerNameMap,
+  setPlayerName,
+  setAvatarIndex,
+  setActivating
 } = userSlice.actions
 
 export default userSlice.reducer
