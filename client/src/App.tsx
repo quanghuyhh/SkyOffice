@@ -10,6 +10,7 @@ import WhiteboardDialog from './components/WhiteboardDialog'
 import VideoConnectionDialog from './components/VideoConnectionDialog'
 import Chat from './components/Chat'
 import HelperButtonGroup from './components/HelperButtonGroup'
+import { WalletStatus } from './components/WalletStatus'
 
 const Backdrop = styled.div`
   position: absolute;
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <Backdrop>
+      {loggedIn && <WalletStatus />}
       {ui}
       {/* Render HelperButtonGroup if no dialogs are opened. */}
       {!computerDialogOpen && !whiteboardDialogOpen && <HelperButtonGroup />}

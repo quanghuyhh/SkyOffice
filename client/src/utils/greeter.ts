@@ -1,0 +1,1 @@
+export const GREETER_URL = 'http://localhost:3001'

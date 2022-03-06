@@ -11,12 +11,17 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import store from './stores'
 
+import { Web3ReactProvider } from '@web3-react/core';
+import { getProvider } from './utils/provider';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ThemeProvider theme={muiTheme}>
-        <App />
-      </ThemeProvider>
+      <Web3ReactProvider getLibrary={getProvider}>
+        <ThemeProvider theme={muiTheme}>
+          <App />
+        </ThemeProvider>
+      </Web3ReactProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

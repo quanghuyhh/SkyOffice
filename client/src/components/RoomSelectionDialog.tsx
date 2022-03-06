@@ -16,6 +16,7 @@ import { useAppSelector } from '../hooks'
 
 import phaserGame from '../PhaserGame'
 import Bootstrap from '../scenes/Bootstrap'
+import { ConnectMetamask } from './ConnectMetamask'
 
 const Backdrop = styled.div`
   position: absolute;
@@ -169,6 +170,7 @@ export default function RoomSelectionDialog() {
               <Title>Welcome to SkyOffice</Title>
               <Content>
                 <img src={logo} alt="logo" />
+              <ConnectMetamask />
                 <Button variant="contained" color="secondary" onClick={handleConnect}>
                   Connect to public lobby
                 </Button>
