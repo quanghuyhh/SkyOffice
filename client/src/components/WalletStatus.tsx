@@ -92,17 +92,17 @@ function Balance(): ReactElement {
   }, [account, library, chainId]); // ensures refresh if referential identity of library doesn't change across chainIds
 
   const formatterBalancer = balance === null
-    ? '0'
+    ? 'Error'
     : balance
-    ? `${(Math.round(+ethers.utils.formatEther(balance) * 1e4) / 1e4).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`
-    : ''
+      ? `${Math.round(+ethers.utils.formatEther(balance) * 1e4) / 1e4}`
+      : ''
   return (
     <>
       <span>
         <strong>Balance</strong>
         <div>
           💰
-          { formatterBalancer }
+          {formatterBalancer}
         </div>
       </span>
     </>

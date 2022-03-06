@@ -1,3 +1,24 @@
+# PREPARE TO RUN
+## Compile and Deploy hardhat-ethers-react-ts-starter
+- `yarn hardhat compile`
+- `yarn hardhat deploy`
+
+## Copy artifacts
+- Copy folder `artifacts` after compiling (repo `hardhat-ethers-react-ts-starter`) from path `frontend/src` and place into folder `client/src` (repo: `SkyOffice`)
+```
+# hardhat-ethers-react-ts-starter
+| ./
+|__frontend
+   |__src
+      |__artifacts
+      
+# SkyOffice
+| ./
+|__client
+   |__src
+      |__artifacts
+```
+
 # SkyOffice ![License](https://img.shields.io/badge/license-MIT-blue) ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-green.svg)
 
 <img alt="Logo" align="right" src="https://user-images.githubusercontent.com/11501902/139942585-a6b044ce-3695-460a-91bd-dd9f1d4611c8.png" width="20%" />
